@@ -26,7 +26,7 @@ public class Filmes extends JFrame implements ActionListener{
     //Botones para realizar las acciones y tomar los datos
     JButton b1, b2, b3, b4, b5, b6, b7 ,b8, b9, b10,b11;
     //textos para describir
-    JLabel l1, l2, l3, l4, l5, l6, l7, l8, l9, l10;
+    JLabel l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12, l13;
     //para obtener los datos
     JTextField t1, t2, t3, t4, t5, t6, t7, t8, t9, t10;
     int contador=0;
@@ -58,11 +58,17 @@ public class Filmes extends JFrame implements ActionListener{
         p1 = new JPanel();
         p2 = new JPanel();
         l1 = new JLabel(taquilla.get(0).toString());
+        l11=new JLabel("Digite la cantidad de boletos y de click en el boton para guardar el dato");
+        l12= new JLabel("Ejemplo: digito 4 y selecciono la pelicula a la que se dirige");
+        l13= new JLabel("Para saber el total de entradas vendidas presione el ultimo boton");
         t1 = new JTextField(10);
         b1 = new JButton("Vender Boletos: Sonic");
         b1.addActionListener(this);
         b1.setActionCommand("Vender Boletos: Sonic");
         p1.add(l1);
+        p2.add(l11);
+        p2.add(l12);
+        p2.add(l13);
         p2.add(t1);
         p2.add(b1);
         p1.setBackground(Color.cyan);
@@ -202,7 +208,7 @@ public class Filmes extends JFrame implements ActionListener{
         }
         if(ae.getActionCommand().equals("Calcular total entradas")){
             calculo=Calculo(contador);
-            JOptionPane.showMessageDialog(null, "Total de boletos es: " + calculo);
+            JOptionPane.showMessageDialog(null, "Total de entradas es: " + calculo);
         }
     }
     public int Calculo(int a){
